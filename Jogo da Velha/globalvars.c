@@ -27,6 +27,25 @@ struct possibilities {
 // Essa variável personalizada guardará os valores para verificar quem ganhou.
 struct possibilities* vectorp;
 
+// Variável para escrever no ranking o resultado do multiplayer.
+struct multiplayerResult {
+    char winner[50];
+    char looser[50];
+};
+
+struct multiplayerResult mresult;
+
+// Variável para escrever no ranking o resultado do singleplayer.
+struct singleplayerResult {
+    char player[50];
+    int difficult;
+    int result;
+};
+
+struct singleplayerResult sresult;
+
+
+
 // Inicializa as variáveis
 void buildVars() {
     // malloc armazena um tanto de memória para a variável.
