@@ -44,6 +44,11 @@ struct singleplayerResult {
 
 struct singleplayerResult sresult;
 
+// Para guardar o nome do jogador um
+char* playerone;
+
+// Para guardar o nome do jogador dois
+char* playertwo;
 
 
 // Inicializa as variáveis
@@ -58,6 +63,8 @@ void buildVars() {
     pone = malloc(5 * sizeof(int));
     ptwo = malloc(4 * sizeof(int));
     vectorp = malloc(8 * sizeof(struct possibilities));
+    playerone = malloc(15 * sizeof(char));
+    playertwo = malloc(15 * sizeof(char));
 
     mgame[0][0] = 0;
     mgame[0][1] = 0;
