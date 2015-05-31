@@ -1,5 +1,5 @@
 /*
-    Esse arquivo serve para guardar todas as vari·veis usadas por mais de um arquivo C.
+    Esse arquivo serve para guardar todas as vari–±veis usadas por mais de um arquivo C.
 */
 
 #include <stdio.h>
@@ -15,19 +15,19 @@ int* pone;
 // Vetor para guardar as jogadas do jogador 2 ou do computador
 int* ptwo;
 
-// Vari·vel para controlar de quem È a vez
+// Vari–±vel para controlar de quem –π a vez
 int turn;
 
-// CriaÁ„o de um novo tipo de vari·vel personalizada
+// Cria–∑–≥o de um novo tipo de vari–±vel personalizada
 struct possibilities {
     int v1; // codigo ascii
     int v2;
     int v3;
 };
-// Essa vari·vel personalizada guardar· os valores para verificar quem ganhou.
+// Essa vari–±vel personalizada guardar–± os valores para verificar quem ganhou.
 struct possibilities* vectorp;
 
-// Vari·vel para escrever no ranking o resultado do multiplayer.
+// Vari–±vel para escrever no ranking o resultado do multiplayer.
 struct multiplayerResult {
     char winner[50];
     char looser[50];
@@ -35,7 +35,7 @@ struct multiplayerResult {
 
 struct multiplayerResult mresult;
 
-// Vari·vel para escrever no ranking o resultado do singleplayer.
+// Vari–±vel para escrever no ranking o resultado do singleplayer.
 struct singleplayerResult {
     char player[50];
     int difficult;
@@ -51,9 +51,9 @@ char* playerone;
 char* playertwo;
 
 
-// Inicializa as vari·veis
+// Inicializa as vari–±veis
 void buildVars() {
-    // malloc armazena um tanto de memÛria para a vari·vel.
+    // malloc armazena um tanto de mem—Éria para a vari–±vel.
     mgame = malloc(3 * sizeof(int *));
     int i = 0;
     for(i = 0; i < 3; i++) {
@@ -76,15 +76,15 @@ void buildVars() {
     mgame[2][1] = 0;
     mgame[2][2] = 0;
 
-    vectorp[0].v1 = 55;
-    vectorp[0].v2 = 56;
-    vectorp[0].v3 = 57;
-    vectorp[1].v1 = 52;
-    vectorp[1].v2 = 53;
-    vectorp[1].v3 = 54;
-    vectorp[2].v1 = 49;
-    vectorp[2].v2 = 50;
-    vectorp[2].v3 = 51;
+    vectorp[0].v1 = 55; // 7
+    vectorp[0].v2 = 56; // 8
+    vectorp[0].v3 = 57; // 9
+    vectorp[1].v1 = 52; // 4
+    vectorp[1].v2 = 53; // 5
+    vectorp[1].v3 = 54; // 6
+    vectorp[2].v1 = 49; // 1
+    vectorp[2].v2 = 50; // 2
+    vectorp[2].v3 = 51; // 3
     vectorp[3].v1 = 55;
     vectorp[3].v2 = 52;
     vectorp[3].v3 = 49;
