@@ -200,13 +200,16 @@ void startMultiplayer() {
     }
   }
   if (cOne >= 3 || cTwo >= 3) {
-    finished = verifyWinner();  
+    finished = verifyWinner();
+    if (cOne == 5 && finished == 0) {
+      printf("\nO jogo terminou em empate :(\n");
+    }
   }
 }
 
 int verifyWinner() {
-  int i, j, win ;
-  for (i = 0; i <=7; i++) { //passa pelas possibilidades
+  int i, j, win, win2 ;
+  for (i = 0; i <= 7; i++) { //passa pelas possibilidades
     win = 0;
     for (j = 0; j <= 5; j++) { //passa pelas jogadas do player1
       if (vectorp[i].v1 == pone[j] || vectorp[i].v2 == pone[j] || vectorp[i].v3 == pone[j]) {
@@ -215,6 +218,19 @@ int verifyWinner() {
     }
     if (win == 3) {
       return 1;
+      printf("\nVitoria do jogador %s!!! \n", playerone);
+    }
+  }
+  for (i = 0; i <= 7; i++) { //passa pelas possibilidades
+    win2 = 0;
+    for (j = 0; j <= 5; j++) { //passa pelas jogadas do player2
+      if (vectorp[i].v1 == ptwo[j] || vectorp[i].v2 == ptwo[j] || vectorp[i].v3 == ptwo[j]) {
+        win2++;
+      }
+    }
+    if (win2 == 3) {
+      return 1;
+      printf("\nVitoria do jogador %s!!! \n", playertwo);
     }
   }
   return 0;
