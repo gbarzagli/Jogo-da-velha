@@ -18,14 +18,8 @@ int* ptwo;
 // Variбvel para controlar de quem й a vez
 int turn;
 
-// Criaзгo de um novo tipo de variбvel personalizada
-struct possibilities {
-    int v1; // codigo ascii
-    int v2;
-    int v3;
-} typedef Possibilities;
 // Essa variбvel personalizada guardarб os valores para verificar quem ganhou.
-Possibilities vectorp[8];
+struct possibilities* vectorp;
 
 // Variбvel para escrever no ranking o resultado do multiplayer.
 struct multiplayerResult {
@@ -60,10 +54,11 @@ void buildVars() {
         mgame[i] = malloc(3 * sizeof(int));
     }
 
-    pone = malloc(5 * sizeof(int));
-    ptwo = malloc(4 * sizeof(int));
-    playerone = malloc(15 * sizeof(char));
-    playertwo = malloc(15 * sizeof(char));
+    pone = (int *) malloc(5 * sizeof(int));
+    ptwo = (int *) malloc(4 * sizeof(int));
+    playerone = (char *) malloc(15 * sizeof(char));
+    playertwo = (char *) malloc(15 * sizeof(char));
+    vectorp = (struct possibilities *) malloc(8 * sizeof(struct possibilities));
 
     mgame[0][0] = 0;
     mgame[0][1] = 0;

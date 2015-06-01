@@ -1,14 +1,17 @@
 # depslib dependency file v1.0
-1433196017 source:c:\users\gabriel\documents\github\jogo-da-velha\jogo da velha\globalvars.c
+1433198370 source:c:\users\gabriel\documents\github\jogo-da-velha\jogo da velha\globalvars.c
 	<stdio.h>
 	<stdlib.h>
 	"globalvars.h"
 
-1431299930 c:\users\gabriel\documents\github\jogo-da-velha\jogo da velha\globalvars.h
+1433198385 c:\users\gabriel\documents\github\jogo-da-velha\jogo da velha\globalvars.h
 
-1433195285 source:c:\users\gabriel\documents\github\jogo-da-velha\jogo da velha\main.c
+1433199557 source:c:\users\gabriel\documents\github\jogo-da-velha\jogo da velha\main.c
 	<stdio.h>
 	<stdlib.h>
+	"globalvars.h"
+	"graphicinterface.h"
+	"multiplayer.h"
 
 1433194251 c:\users\gabriel\documents\github\jogo-da-velha\jogo da velha\graphicinterface.h
 
@@ -25,4 +28,13 @@
 	<stdbool.h>
 	<string.h>
 	"globalvars.h"
+
+1433199853 source:c:\users\gabriel\documents\github\jogo-da-velha\jogo da velha\multiplayer.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"globalvars.h"
+	"graphicinterface.h"
+
+1433198740 c:\users\gabriel\documents\github\jogo-da-velha\jogo da velha\multiplayer.h
 
