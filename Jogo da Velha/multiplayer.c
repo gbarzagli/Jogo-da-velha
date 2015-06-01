@@ -202,9 +202,9 @@ void startMultiplayer() {
   int input;
 
   printf("\nPlayer 1 - nickname: ");
-  scanf("%s", &playerone);
+  gets(playerone);
   printf("\nPlayer 2 - nickname: ");
-  scanf("%s", &playertwo);
+  gets(playertwo);
 
   printGame();
 
