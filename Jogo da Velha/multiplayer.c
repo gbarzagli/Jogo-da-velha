@@ -1,15 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
 #include "globalvars.h"
-extern int** mgame
-extern  int* playerone; 
-extern  int* playertwo;
+#include "graphicinterface.h"
+
+extern int** mgame;
+extern int* pone;
+extern int* ptwo;
+extern struct possibilities vectorp;
+extern char* playerone;
+extern char* playertwo;
+int turn, cOne = 0, cTwo = 0;
+
 
 void fillGame(int input) {
   switch(input)
   {
     case 55: // 7
     {
-      if mgame[0][0] == 0 {
-        if turn == 1 {
+      if (mgame[0][0] == 0) {
+        if (turn == 1) {
           //caso jogador um, preenche seu vetor com a posicao da jogada
           pone[cOne] = 55;
           //preenche matriz do jogo com a vez da jogada
@@ -28,8 +38,8 @@ void fillGame(int input) {
 
     case 56: // 8
     {
-      if mgame[0][1] == 0 {
-        if turn == 1 {
+      if (mgame[0][1] == 0) {
+        if (turn == 1) {
           pone[cOne] = 56;
           mgame[0][1] = 1;
           cOne++;
@@ -39,15 +49,15 @@ void fillGame(int input) {
           cTwo++;
         }
       } else {
-       printf("Jogada ja realizada!!\n"); 
+       printf("Jogada ja realizada!!\n");
       }
       break;
     }
 
     case 57: // 9
     {
-      if mgame[0][2] == 0 {
-        if turn == 1 {
+      if (mgame[0][2] == 0) {
+        if (turn == 1) {
           pone[cOne] = 57;
           mgame[0][2] = 1;
           cOne++;
@@ -57,15 +67,15 @@ void fillGame(int input) {
           cTwo++;
         }
       } else {
-       printf("Jogada ja realizada!!\n"); 
+       printf("Jogada ja realizada!!\n");
       }
       break;
     }
 
     case 52: // 4
     {
-      if mgame[1][0] == 0 {
-        if turn == 1 {
+      if (mgame[1][0] == 0) {
+        if (turn == 1) {
           pone[cOne] = 52;
           mgame[1][0] = 1;
           cOne++;
@@ -75,15 +85,15 @@ void fillGame(int input) {
           cTwo++;
         }
       } else {
-       printf("Jogada ja realizada!!\n"); 
+       printf("Jogada ja realizada!!\n");
       }
       break;
     }
 
     case 53: // 5
     {
-      if mgame[1][1] == 0 {
-        if turn == 1 {
+      if (mgame[1][1] == 0) {
+        if (turn == 1) {
           pone[cOne] = 53;
           mgame[1][1] = 1;
           cOne++;
@@ -93,15 +103,15 @@ void fillGame(int input) {
           cTwo++;
         }
       } else {
-       printf("Jogada ja realizada!!\n"); 
+       printf("Jogada ja realizada!!\n");
       }
       break;
     }
 
     case 54: // 6
     {
-      if mgame[1][2] == 0 {
-        if turn == 1 {
+      if (mgame[1][2] == 0) {
+        if (turn == 1) {
           pone[cOne] = 54;
           mgame[1][2] = 1;
           cOne++;
@@ -111,15 +121,15 @@ void fillGame(int input) {
           cTwo++;
         }
       } else {
-       printf("Jogada ja realizada!!\n"); 
+       printf("Jogada ja realizada!!\n");
       }
       break;
     }
 
     case 49: // 1
     {
-      if mgame[2][0] == 0 {
-        if turn == 1 {
+      if (mgame[2][0] == 0) {
+        if (turn == 1) {
           pone[cOne] = 49;
           mgame[2][0] = 1;
           cOne++;
@@ -129,15 +139,15 @@ void fillGame(int input) {
           cTwo++;
         }
       } else {
-       printf("Jogada ja realizada!!\n"); 
+       printf("Jogada ja realizada!!\n");
       }
       break;
     }
 
     case 50: // 2
     {
-      if mgame[2][1] == 0 {
-        if turn == 1 {
+      if (mgame[2][1] == 0) {
+        if (turn == 1) {
           pone[cOne] = 50;
           mgame[2][1] = 1;
           cOne++;
@@ -147,15 +157,15 @@ void fillGame(int input) {
           cTwo++;
         }
       } else {
-       printf("Jogada ja realizada!!\n"); 
+       printf("Jogada ja realizada!!\n");
       }
       break;
     }
 
     case 51: // 3
     {
-      if mgame[2][2] == 0 {
-        if turn == 1 {
+      if (mgame[2][2] == 0) {
+        if (turn == 1) {
           pone[cOne] = 51;
           mgame[2][2] = 1;
           cOne++;
@@ -165,13 +175,13 @@ void fillGame(int input) {
           cTwo++;
         }
       } else {
-       printf("Jogada ja realizada!!\n"); 
+       printf("Jogada ja realizada!!\n");
       }
       break;
     }
   }
   // troca a vez do jogador
-  if turn == 1 {
+  if (turn == 1) {
     turn = 2;
   } else {
     turn = 1;
@@ -180,25 +190,27 @@ void fillGame(int input) {
 
 void startMultiplayer() {
   buildVars();
-  // contador de jogadas do jogador um e dois 
-  int cOne = 0, cTwo = 0;
+  // contador de jogadas do jogador um e dois
   int finished = 0;
-  char input;
-  
+  int input;
+
   printf("\nPlayer 1 - nickname: ");
   scanf("%s", &playerone);
   printf("\nPlayer 2 - nickname: ");
   scanf("%s", &playertwo);
-  
+
   while(finished == 0) {
     input = getch();
-    // verifica de quem é a vez de jogar 
+    // verifica de quem é a vez de jogar
     if (turn == 1){
-      fillgame(int input);
+      fillgame(input);
     } else if (turn == 2) {
-      fillgame(int input);
+      fillgame(input);
     }
   }
+
+  printGame();
+
   if (cOne >= 3 || cTwo >= 3) {
     finished = verifyWinner();
     if (cOne == 5 && finished == 0) {

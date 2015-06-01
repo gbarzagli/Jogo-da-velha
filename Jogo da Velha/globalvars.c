@@ -23,9 +23,9 @@ struct possibilities {
     int v1; // codigo ascii
     int v2;
     int v3;
-};
+} typedef Possibilities;
 // Essa variбvel personalizada guardarб os valores para verificar quem ganhou.
-struct possibilities* vectorp;
+Possibilities vectorp[8];
 
 // Variбvel para escrever no ranking o resultado do multiplayer.
 struct multiplayerResult {
@@ -62,7 +62,6 @@ void buildVars() {
 
     pone = malloc(5 * sizeof(int));
     ptwo = malloc(4 * sizeof(int));
-    vectorp = malloc(8 * sizeof(struct possibilities));
     playerone = malloc(15 * sizeof(char));
     playertwo = malloc(15 * sizeof(char));
 
