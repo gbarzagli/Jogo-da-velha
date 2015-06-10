@@ -35,9 +35,21 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="globalvars.h" />
+		<Unit filename="graphicinterface.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="graphicinterface.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="multiplayer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="multiplayer.h" />
+		<Unit filename="ranking.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ranking.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

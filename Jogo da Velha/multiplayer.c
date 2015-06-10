@@ -3,6 +3,7 @@
 #include <conio.h>
 #include "globalvars.h"
 #include "graphicinterface.h"
+#include "ranking.h"
 
 extern int** mgame;
 extern int* pone;
@@ -24,10 +25,12 @@ void fillGame(int input) {
           //preenche matriz do jogo com a vez da jogada
           mgame[0][0] = 1;
           cOne++;
+          turn = 2;
         } else {
           ptwo[cTwo] = 55;
           mgame[0][0] = 2;
           cTwo++;
+          turn = 1;
         }
       } else {
         printf("Jogada ja realizada!!\n");
@@ -39,10 +42,12 @@ void fillGame(int input) {
           pone[cOne] = 56;
           mgame[0][1] = 1;
           cOne++;
+          turn = 2;
         } else {
           ptwo[cTwo] = 56;
           mgame[0][1] = 2;
           cTwo++;
+          turn = 1;
         }
       } else {
        printf("Jogada ja realizada!!\n");
@@ -54,10 +59,12 @@ void fillGame(int input) {
           pone[cOne] = 57;
           mgame[0][2] = 1;
           cOne++;
+          turn = 2;
         } else {
           ptwo[cTwo] = 57;
           mgame[0][2] = 2;
           cTwo++;
+          turn = 1;
         }
       } else {
        printf("Jogada ja realizada!!\n");
@@ -69,10 +76,12 @@ void fillGame(int input) {
           pone[cOne] = 52;
           mgame[1][0] = 1;
           cOne++;
+          turn = 2;
         } else {
           ptwo[cTwo] = 52;
           mgame[1][0] = 2;
           cTwo++;
+          turn = 1;
         }
       } else {
        printf("Jogada ja realizada!!\n");
@@ -84,10 +93,12 @@ void fillGame(int input) {
           pone[cOne] = 53;
           mgame[1][1] = 1;
           cOne++;
+          turn = 2;
         } else {
           ptwo[cTwo] = 53;
           mgame[1][1] = 2;
           cTwo++;
+          turn = 1;
         }
       } else {
        printf("Jogada ja realizada!!\n");
@@ -99,10 +110,12 @@ void fillGame(int input) {
           pone[cOne] = 54;
           mgame[1][2] = 1;
           cOne++;
+          turn = 2;
         } else {
           ptwo[cTwo] = 54;
           mgame[1][2] = 2;
           cTwo++;
+          turn = 1;
         }
       } else {
        printf("Jogada ja realizada!!\n");
@@ -114,10 +127,12 @@ void fillGame(int input) {
           pone[cOne] = 49;
           mgame[2][0] = 1;
           cOne++;
+          turn = 2;
         } else {
           ptwo[cTwo] = 49;
           mgame[2][0] = 2;
           cTwo++;
+          turn = 1;
         }
       } else {
        printf("Jogada ja realizada!!\n");
@@ -129,10 +144,12 @@ void fillGame(int input) {
           pone[cOne] = 50;
           mgame[2][1] = 1;
           cOne++;
+          turn = 2;
         } else {
           ptwo[cTwo] = 50;
           mgame[2][1] = 2;
           cTwo++;
+          turn = 1;
         }
       } else {
        printf("Jogada ja realizada!!\n");
@@ -144,28 +161,25 @@ void fillGame(int input) {
           pone[cOne] = 51;
           mgame[2][2] = 1;
           cOne++;
+          turn = 2;
         } else {
           ptwo[cTwo] = 51;
           mgame[2][2] = 2;
           cTwo++;
+          turn = 1;
         }
       } else {
        printf("Jogada ja realizada!!\n");
       }
       break;
   }
-  // troca a vez do jogador
-  if (turn == 1) {
-    turn = 2;
-  } else {
-    turn = 1;
-  }
 }
 
 
 
 int verifyWinner() {
-  int i, j, win, win2 ;
+  int i, j, win, win2;
+  struct multiplayerResult result;
   for (i = 0; i <= 7; i++) { //passa pelas possibilidades
     win = 0;
     for (j = 0; j <= 5; j++) { //passa pelas jogadas do player1
@@ -174,6 +188,9 @@ int verifyWinner() {
       }
     }
     if (win == 3) {
+      result.winner = playerone;
+      result.looser = playertwo;
+      addMultiplayerRanking(result);
       printf("\nVitoria do jogador %s!!! \n", playerone);
       return 1;
     }
@@ -186,6 +203,9 @@ int verifyWinner() {
       }
     }
     if (win2 == 3) {
+      result.winner = playertwo;
+      result.looser = playerone;
+      addMultiplayerRanking(result);
       printf("\nVitoria do jogador %s!!! \n", playertwo);
       return 1;
     }

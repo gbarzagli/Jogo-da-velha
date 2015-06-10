@@ -21,20 +21,7 @@ int turn;
 // Essa variбvel personalizada guardarб os valores para verificar quem ganhou.
 struct possibilities* vectorp;
 
-// Variбvel para escrever no ranking o resultado do multiplayer.
-struct multiplayerResult {
-    char winner[50];
-    char looser[50];
-};
-
 struct multiplayerResult mresult;
-
-// Variбvel para escrever no ranking o resultado do singleplayer.
-struct singleplayerResult {
-    char player[50];
-    int difficult;
-    int result;
-};
 
 struct singleplayerResult sresult;
 
