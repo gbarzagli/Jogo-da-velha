@@ -6,7 +6,6 @@
 
 int main() {
     // FUNÇÃO DO MENU
-    startMultiplayer();
     system("pause");
     return EXIT_SUCCESS;
 }
